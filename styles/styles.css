@@ -13,7 +13,6 @@ You are discouraged from changing any provided CSS.
 
 */
 
-
 /************* site defaults *************/
 body {
     width: 950px;
@@ -23,9 +22,12 @@ body {
 }
 
 /* TO DO: all elements with the .flex class applied are to be made into flex-box containers. */
-
-
- 
+.flex {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+}
 
 /************* site-wide text styling *************/
 
@@ -42,12 +44,52 @@ body {
         - change the cursor to pointer.
 */
 
+h1 {
+    font-size: 48px;
+    text-align: center;
+}
 
+h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
 
+.large-text {
+    font-size: 24px;
+}
 
+.fake-button {
+    background-color: #E5AF42;
+    text-align: center;
+    line-height: 3;
+    border: 1px solid black;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+}
 
+.fake-button:hover {
+    background-color: #4278e5;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
 
+.blue-hover:hover {
+    background-color: #4278e5;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
 /************* header/footer styling *************/
 
@@ -59,10 +101,37 @@ body {
     - the footer will be 60px tall, have a font-weight of 200, and the text within will be centered vertically and horizontally.
 */
 
+header, footer {
+    background-color: #E5AF42;
+    color: white;
+}
 
+header {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+header img {
+    width: 100px;
+    height: 100px;
+    margin: 25px;
+}
 
+header h1 {
+    flex-grow: 1;
+    text-align: center;
+}
 
+footer {
+    height: 60px;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 /************* index page *************/
 
@@ -74,10 +143,37 @@ body {
     - the pair of fake-buttons will be centered on the page. HINT: can calculate the required margin to make them appear to be centered.
 */
 
+.index {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
 
 
+.index .about-us {
+    flex-grow: 1;
+    margin-left: 25px;
+}
 
 
+.index img {
+    width: 300px;
+    margin-bottom: 50px;
+    order: 2; 
+}
+
+
+.index .flex {
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+.index .fake-button {
+    width: 250px;
+    margin: 0 75px;
+    order: 1;
+}
 
 /************* bookings page *************/
 
@@ -90,20 +186,67 @@ body {
     - the "clear days" button will be 200px wide.
     - any element tagged with the .clicked class will turn mustard yellow. **This will be very important for your JavaScript.**
     - all items within the page will be centered within their available space.
-
 */
 
+.booking-page {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+}
 
 
+.day-selector li {
+    width: 60px;         
+    height: 40px;    
+    margin: 0 10px 20px; 
+    border: 1px solid black;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block; 
+}
 
 
+.clicked {
+    background-color: #E5AF42;
+}
 
 
+.small-button {
+    border: 1px solid black;
+    padding: 5px;
+}
 
 
+.top-margin {
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
 
 
+#clear-button {
+    width: 200px;        
+    padding: 10px;       
+    background-color: #E5AF42;  
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;     
+    display: inline-block;
+}
 
+
+#clear-button:hover {
+    background-color: #4278e5;
+    border-color: #4278e5;
+}
+
+
+#clear-button {
+    margin-left: auto;
+    margin-right: auto; 
+}
 
 /************* contact page *************/
 /* TO DO:
@@ -114,6 +257,96 @@ body {
     - the edges of the button will line up exactly with the text-area element. HINT: time for some math!
 */
 
+.contact {
+    width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 500px; 
+}
 
 
+.contact form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
 
+
+.contact h2 {
+    text-align: center;
+    font-size: 36px;
+    white-space: nowrap;
+    margin-bottom: 24px;
+}
+
+
+.contact .flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    width: 100%;
+    margin-bottom: 24px; 
+}
+
+
+.contact label {
+    width: 150px; 
+    text-align: right;
+    margin-right: 10px;
+    align-self: flex-start; 
+}
+
+
+.contact input,
+.contact textarea {
+    width: 230px; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 10px;
+    border: 1px solid black;
+    margin-top: 0;
+}
+
+.contact textarea {
+    height: 150px;
+    resize: both; 
+    min-height: 150px; 
+}
+
+
+.contact button {
+    width: 230px;
+    padding: 10px;
+    background-color: #E5AF42;
+    border: 1px solid black;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; 
+    align-self: flex-end; 
+}
+
+
+.contact button:hover {
+    background-color: #4278e5;
+    border-color: #4278e5;
+}
+
+
+.contact .thank-you-message {
+    display: none;  
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 24px;
+}
+
+
+.contact .flex:nth-child(3) {
+    margin-top: -15px;
+}
